@@ -39,41 +39,41 @@
         line-height: 1.14;
         letter-spacing: getLetterSpacing("header-link");
         text-decoration: none;
-    }
 
-    &__nav-link--notactive {
-        color: getColor("primary");
-        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-        &:visited {
+        &--notactive {
             color: getColor("primary");
+            transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+            &:visited {
+                color: getColor("primary");
+            }
+
+            &:hover,
+            &:focus {
+                color: getColor("brand");
+            }
         }
 
-        &:hover,
-        &:focus {
+        &--active {
             color: getColor("brand");
-        }
-    }
+            transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
 
-    &__nav-link--active {
-        color: getColor("brand");
-        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
+            &:visited {
+                color: getColor("brand");
+            }
 
-        &:visited {
-            color: getColor("brand");
-        }
-
-        &::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 4px;
-            background: getColor("brand");
-            border-radius: 2px;
-            transform: translateY(33px);
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 4px;
+                background: getColor("brand");
+                border-radius: 2px;
+                transform: translateY(33px);
+            }
         }
     }
 
